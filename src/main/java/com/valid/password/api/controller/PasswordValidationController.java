@@ -8,18 +8,21 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.valid.password.api.model.PasswordRequest;
 
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiOperation;
+import io.swagger.annotations.ApiResponse;
+import io.swagger.annotations.ApiResponses;
+
 @RestController
-//@Api(tags = "Validação de Senha") 
+@Api(tags = "Validação de Senha") 
 public class PasswordValidationController {
 
-    @PostMapping("/validate-password")
-    /*
-    	@ApiOperation(value = "Validar senha", notes = "Verifica se a senha atende aos critérios de validação.")
-    	@ApiResponses({
-        	@ApiResponse(code = 200, message = "Senha válida"),
-        	@ApiResponse(code = 400, message = "Senha inválida")
-    	})
-    */
+    @PostMapping("/validate-password") 
+	@ApiOperation(value = "Validar senha", notes = "Verifica se a senha atende aos critérios de validação.")
+	@ApiResponses({
+    	@ApiResponse(code = 200, message = "Senha válida"),
+    	@ApiResponse(code = 400, message = "Senha inválida")
+	}) 
     public ResponseEntity<String> validatePassword(@RequestBody PasswordRequest request) {
         String password = request.getPassword();
 
