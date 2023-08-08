@@ -34,19 +34,18 @@ public class PasswordValidationController {
     }
 
     private boolean isValidPassword(String password) {
-        /** Validações da senha:
-          
-         	(?=.*[a-z]): Verifica se há pelo menos uma letra minúscula na senha;
-         	(?=.*[A-Z]): Verifica se há pelo menos uma letra maiúscula na senha;
-         	(?=.*\\d): Verifica se há pelo menos um dígito numérico na senha;
-         	(?=.*[@$!%*?&]): Verifica se há pelo menos um dos caracteres especiais [@, $, !, %, *, ?, &] na senha;
-         	[A-Za-z\\d@$!%*?&]{8,}$: Verifica se a senha contém apenas letras maiúsculas, minúsculas; 
-         							 dígitos numéricos ou os caracteres especiais mencionados; 
-         							 e que a senha tenha pelo menos 8 caracteres no total;
-         
-         */
         return password != null && password.matches("^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)(?=.*[@$!%*?&])[A-Za-z\\d@$!%*?&]{8,}$");
+        /** Validações da senha:
         
+     	(?=.*[a-z]): Verifica se há pelo menos uma letra minúscula na senha;
+     	(?=.*[A-Z]): Verifica se há pelo menos uma letra maiúscula na senha;
+     	(?=.*\\d): Verifica se há pelo menos um dígito numérico na senha;
+     	(?=.*[@$!%*?&]): Verifica se há pelo menos um dos caracteres especiais [@, $, !, %, *, ?, &] na senha;
+     	[A-Za-z\\d@$!%*?&]{8,}$: Verifica se a senha contém apenas letras maiúsculas, minúsculas; 
+     							 dígitos numéricos ou os caracteres especiais mencionados; 
+     							 e que a senha tenha pelo menos 8 caracteres no total;
+     
+         */
+
     }
-    
 }
